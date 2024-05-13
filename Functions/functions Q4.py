@@ -1,18 +1,16 @@
 def marks():
-    avarage = input_marks / 10
+    total_marks = 0
+    for i in range(1, 11):
+        input_marks = int(input("Enter your marks: "))
+        total_marks += input_marks
 
-    if avarage >= 50:
+    print("\nTotal marks: ",total_marks)
+    avarage_marks = total_marks / 10
+
+    if avarage_marks >= 50:
         print("Good!")
     else:
         print("Bad!")
 
-
-for i in range(1, 11):
-    input_marks = int(input("Enter the input_marks: "))
-
-input_marks += input_marks
-
-total = input_marks
-print("\nTotal is: ", total)
 
 marks()
