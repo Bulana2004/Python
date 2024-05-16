@@ -2,6 +2,8 @@ while True:
     input_number = int(
         input("\nEnter your number to calculate \nfibonacci number series: "))
 
+    
+    input_number += 1
     previous_number = 0
     current_number = 1
 
@@ -12,7 +14,7 @@ while True:
         print("\nThe sereis is ")
         for i in range(1, input_number):
             next_number = previous_number + current_number
-            print(i,".",previous_number, "+", current_number, "=", next_number)
+            print("\t",i,".",previous_number, "+", current_number, "=", next_number)
             previous_number = current_number
             current_number = next_number
 
