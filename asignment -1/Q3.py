@@ -1,56 +1,59 @@
+coffe_items = []
 while True:
-    # Cofee Menu
-    coffee_items = {
-        "americano_price": 400,
-        "latte_price": 350,
-        "mocha_price": 690,
-        "cappuccino_price": 1225
+    coffe_items = {
+        "Caffe Americano": 400.00,
+        "Caffe Latte": 359.00,
+        "Caffe Mocha": 690.00,
+        "Cappuccino": 1225.00
     }
 
-    print("\nWelcome Star Bucks Coffee Shop \nNo. 142, Dalugama Kelaniya")
-    print("\nCofee List and Prices:")
+    store_name = "\nStar Bucks Coffee Shop!"
+    address = "No,142,Dalugama Kelaniya"
 
-    # print the cofee list
-    for item, price in coffee_items.items():
-        print(f"{item}: Rs:{price}")
+    # Caffe items names
+    print(store_name)
+    print(address)
+    print("\nCoffe Items:")
+    for value, key in coffe_items.items():
+        print(f"\t{value}- Rs:{key}")
 
-    # Get quantity
-    americano_quantity = int(input("\nEnter the quantity of Caffe Americano: "))
-    latte_quantity = int(input("Enter the quantity of Caffe Latte: "))
-    mocha_quantity = int(input("Enter the quantity of Caffe Mocha: "))
-    cappuccino_quantity = int(input("Enter the quantity of Cappuccino: "))
+    # quantity
+    americano_quantity = int(input("\nAmericano quantity : "))
+    latte_quantity = int(input("Latte quantity : "))
+    mocha_quantity = int(input("Mocha quantity : "))
+    cappuccino_quantity = int(input("Cappuccino quantity : "))
 
-    # Get oder amount
-    americano_amount = coffee_items["americano_price"] * americano_quantity
-    latte_amount = coffee_items["latte_price"] * latte_quantity
-    mocha_amount = coffee_items["mocha_price"] * mocha_quantity
-    cappuccino_amount = coffee_items["cappuccino_price"] * cappuccino_quantity
+    # Buy Caffe items price
+    americano_price = americano_quantity * coffe_items["Caffe Americano"]
+    latte_price = latte_quantity * coffe_items["Caffe Latte"]
+    mocha_price = mocha_quantity * coffe_items["Caffe Mocha"]
+    cappuccino_price = cappuccino_quantity * coffe_items["Cappuccino"]
 
-    # Get the total amount
-    total_amount = americano_amount + latte_amount + mocha_amount + cappuccino_amount
+    # Total price
+    total_price = americano_price + latte_price + mocha_price + cappuccino_price
 
-    # Print the bill
-    print("\nStar Bucks Coffee Shop")
-    print("No. 142, Dalugama Kelaniya")
+    # Output
+    print(store_name)
+    print(address)
 
     if americano_quantity > 0:
-        print(f"\nCaffe Americano\t\t\t\t{
-            americano_quantity} * {coffee_items["americano_price"]}\t\tRs:{americano_amount}")
+        print("\nCaffe Americano\t\t", americano_quantity, "x",
+              coffe_items["Caffe Americano"], "\tRs:", americano_price)
     if latte_quantity > 0:
-        print(f"Caffe Latte\t\t\t\t{
-            latte_quantity} * {coffee_items["latte_price"]}\t\tRs:{latte_amount}")
+        print("Caffe Latte\t\t", latte_quantity, "x",
+              coffe_items["Caffe Latte"], "\tRs:", latte_price)
     if mocha_quantity > 0:
-        print(f"Caffe Mocha\t\t\t\t{
-            mocha_quantity} * {coffee_items["mocha_price"]}\t\tRs:{mocha_amount}")
+        print("Caffe Mocha\t\t", mocha_quantity, "x",
+              coffe_items["Caffe Mocha"], "\tRs:", mocha_price)
     if cappuccino_quantity > 0:
-        print(f"Cappuccino\t\t\t\t{
-            cappuccino_quantity} * {coffee_items["cappuccino_price"]}\tRs:{cappuccino_amount}")
+        print("Cappuccino\t\t", cappuccino_quantity, "x",
+              coffe_items["Cappuccino"], "\tRs:", cappuccino_price)
 
-    print(f"\nTotal\t\t\t\t\t\t\tRs:{total_amount}")
+    print("\nTotal\t\t\t\t", "       Rs:", total_price)
 
-    user_choice = input("\nDo you want to get another bill (yes or no): ")
-    y = user_choice[0].lower()
-    if y != "y":
+    # User choice
+    choice = input("\nDo you want to got a another bill (yes or no) : ")
+    x = choice[0].lower()
+    if x != 'y':
         break
-
 print("\nThank you!")
