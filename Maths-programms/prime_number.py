@@ -1,20 +1,17 @@
 while True:
-    num = int(input("\nEnter your number: "))
+    input_number = int(input("\nEnter your number here: "))
 
-    if num == 1:
-        print(num, " is not a prime number!")
-
-    elif num > 1:
-        for i in range(2, num):
-            if num % i == 0:
-                print(num, " is not a prime number")
+    if input_number >= 1:
+        for i in range(2, input_number):
+            if input_number % i == 0:
+                print("\n(", input_number, ")", " Is not a primary key!")
                 break
         else:
-            print(num, " is a prime number!")
+            print("\n(", input_number, ")", " Is a primary key!")
     else:
-        print(num, " is a prime number!")
-
-    choice = input("\nCheck anothe number (yes/no): ")
+        print("\n(", input_number, ")", " Is not a primary key!")
+    # Get user inputs
+    choice = input("\nCheck another primary key (yes/no) : ")
     x = choice[0].lower()
     if x != "y":
         break
