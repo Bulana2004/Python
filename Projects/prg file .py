@@ -122,7 +122,7 @@ def find_index_and_update_data():
         record = line.split("|")
         index = record[0].strip()
         name = record[1].strip()
-        print(f"\nIndex: {index} | Name: {name}")
+        print(f"\nIndex: {index} || Name: {name}")
 
     enter_index = input("\nEnter your desired index number to edit details: ")
     found_index = None
@@ -181,6 +181,8 @@ def find_index_and_update_data():
     # Write the updated data back to the file
     with open("grp.txt", "w") as file:
         file.writelines(lines)
+    
+    file.close()
 
 
 # Programm Run
