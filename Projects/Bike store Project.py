@@ -1,5 +1,8 @@
 bikes = []
 item_number = 1
+print('\nDavid Peris Motor Enterprise')
+print('No:356/A, Hill Street, Dehiwala.')
+print('011-2345678 / 011-98765432')
 
 # While loop
 while True:
@@ -106,13 +109,21 @@ while True:
             # Test the valid quantity
             if buy_quantity <= found_input_number['Quantity']:
                 bill_price = buy_quantity * found_input_number['Price']
-                print(f"\nBike Brand : {found_input_number['Brand']} \nBike modal : {
-                      found_input_number['Model']}")
-                print(f"Total Price : Rs.{bill_price}")
-
                 current_quantity = found_input_number['Quantity'] - \
                     buy_quantity
-                print(f"\nCurrent Quantity is {current_quantity}")
+
+                # Bill Output
+                print('\nDavid Peris Motor Enterprise')
+                print('No:356/A, Hill Street, Dehiwala.')
+                print('011-2345678 / 011-98765432')
+                print('----------------------------------------------------------')
+                print('Brand\t\tModel\t\tPrice\t\tQuantity')
+                print('----------------------------------------------------------')
+                print(f"{found_input_number['Brand']}\t\t{
+                      found_input_number['Model']}\t\t{found_input_number['Price']}\t\t{buy_quantity}")
+                print('-----------------------------------------------------------')
+                print(f"Total amount : {bill_price}")
+
                 if current_quantity:
                     found_input_number['Quantity'] = int(current_quantity)
             else:
