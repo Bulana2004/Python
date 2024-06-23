@@ -1,3 +1,4 @@
-
-1|Bulana Bimsith|77|66|100|243|81.0|A
-2|Kisaja Gethmin|88|77|66|231|77.0|A
+index|name|pr-marks|th-marks|pro-marks|total|avaragae|grade1
+1|Bulana Bimsith|76|87|57|220|73.33333333333333|B
+2|Kisaja|76|87|57|220|73.33333333333333|B
+3|Kaveesha Mihirangi|76|45|100|221|73.66666666666667|B

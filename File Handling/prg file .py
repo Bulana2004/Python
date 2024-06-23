@@ -107,6 +107,8 @@ def read_details_in_file():
         print(f"Student name: {found_student['Name']}")
         print(f"Total marks are {found_student['Total']}\nAvarage marks are {
               found_student['Avarage']}\nGrade is {found_student['Grade']}!")
+        print(f"Practicle Marks {found_student['pr_marks']}\nTheary marks {
+              found_student['th_marks']}\nProject marks {found_student['pro_marks']}")
     else:
         print("\nEntered index number is not valid")
 
@@ -122,6 +124,9 @@ def find_index_and_update_data():
         record = line.split("|")
         index = record[0].strip()
         name = record[1].strip()
+        pr_marks = record[2].strip()
+        th_marks = record[3].strip()
+        pro_marks = record[4].strip()
         print(f"\nIndex: {index} || Name: {name}")
 
     enter_index = input("\nEnter your desired index number to edit details: ")
@@ -141,18 +146,33 @@ def find_index_and_update_data():
         print(f"Theory marks - {record[3].strip()}")
         print(f"Project marks - {record[4].strip()}")
 
-        new_name = input("\nEnter Your Updated Name: ") or record[1].strip()
-        new_pr_marks = input(
-            "Enter New Practical marks: ") or record[2].strip()
-        new_th_marks = input(
-            "Enter your new Theory marks: ") or record[3].strip()
-        new_pro_marks = input(
-            "Enter your new Project marks: ") or record[4].strip()
+        new_name = name
+        new_pr_marks = int(pr_marks)
+        new_th_marks = int(th_marks)
+        new_pro_marks = int(pro_marks)
 
-        # Convert marks to integers for calculation
-        new_pr_marks = int(new_pr_marks)
-        new_th_marks = int(new_th_marks)
-        new_pro_marks = int(new_pro_marks)
+        while True:
+            user_choice = int(input(
+                "\nWhat do you want to edit\n1.Name\n2.Practicle marks\n3.Theary marks\n4.Project marks\n5.Save\nEnter number to continue: "))
+
+            if user_choice == 1:
+                new_name = input(
+                    "Enter Your Updated Name: ") or record[1].strip()
+            elif user_choice == 2:
+                new_pr_marks = input(
+                    "Enter New Practical marks: ") or record[2].strip()
+                new_pr_marks = int(new_pr_marks)
+            elif user_choice == 3:
+                new_th_marks = input(
+                    "Enter your new Theory marks: ") or record[3].strip()
+                new_th_marks = int(new_th_marks)
+            elif user_choice == 4:
+                new_pro_marks = input(
+                    "Enter your new Project marks: ") or record[4].strip()
+                new_pro_marks = int(new_pro_marks)
+            elif user_choice == 5:
+                print("\nChange succeful!")
+                break
 
         # Calculate new total marks and average marks
         new_total_marks = new_pr_marks + new_th_marks + new_pro_marks
@@ -181,7 +201,7 @@ def find_index_and_update_data():
     # Write the updated data back to the file
     with open("grp.txt", "w") as file:
         file.writelines(lines)
-    
+
     file.close()
 
 
