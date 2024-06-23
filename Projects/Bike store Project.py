@@ -1,12 +1,13 @@
 bikes = []
 item_number = 1
 print('\nDavid Peris Motor Enterprise')
-print('No:356/A, Hill Street, Dehiwala.')
-print('011-2345678 / 011-98765432')
+print('No:356/A, Hill Street, Galle.')
+print('011-2345678')
 
 # While loop
 while True:
     print("\nMenu")
+    print('------')
     # Menu inputs
     user_input = int(input(
         "1.Add new item \n2.Find the bike details and update details \n3.Print the Bill \n4.Exit\nEnter number to continue : ")
@@ -16,6 +17,7 @@ while True:
     if user_input == 1:
         # Inputs
         print("\nInput Menu")
+        print('------------')
         print(f"Item number is {item_number}")
         brand = input("1.Enter brand name : ")
         model = input("2.Enter model name : ")
@@ -38,6 +40,7 @@ while True:
 
     elif user_input == 2:
         print("\nItem List")
+        print('-----------')
         for bike_details in bikes:
             print(f"\nItem Number : {bike_details['Item number']} || Brand : {
                   bike_details['Brand']} || Model : {bike_details['Model']}")
@@ -53,6 +56,7 @@ while True:
 
         if found_item:
             print("\nItem find successful!")
+            print('-----------------------')
             print(f"\nItem Number is :{found_item['Item number']} \nBrand is :{
                   found_item['Brand']} \nModal is :{found_item['Model']} \nThe Quantity of bikes :{found_item['Quantity']} \nThe Price of each one bike :Rs.{found_item['Price']}")
             # Update the found item
@@ -78,6 +82,7 @@ while True:
                     found_item['Price'] = float(new_price)
 
                 print("\nItem updated successfully!")
+                print('-----------------------------')
                 print(f"\nItem Number: {found_item['Item number']} \nBrand: {found_item['Brand']} \nModel: {
                     found_item['Model']} \nQuantity: {found_item['Quantity']} \nPrice: Rs.{found_item['Price']}")
             else:
@@ -87,6 +92,7 @@ while True:
 
     elif user_input == 3:
         print("\nBike list : ")
+        print('--------------')
         for bike_details in bikes:
             print(f"Item number {bike_details['Item number']} | Brand {
                   bike_details['Brand']} | Model {bike_details['Model']}")
@@ -102,8 +108,8 @@ while True:
 
         # Print the quantity
         if found_input_number:
-            print(f"\nCurrent quantity of {found_input_number['Brand']} and {
-                  found_input_number['Model']} is {found_input_number['Quantity']}")
+            print(f"\nCurrent quantity of {found_input_number['Brand']} {
+                  found_input_number['Model']} : {found_input_number['Quantity']}")
 
             buy_quantity = int(input("How many bikes buy the coustermer : "))
             # Test the valid quantity
@@ -114,8 +120,8 @@ while True:
 
                 # Bill Output
                 print('\nDavid Peris Motor Enterprise')
-                print('No:356/A, Hill Street, Dehiwala.')
-                print('011-2345678 / 011-98765432')
+                print('No:356/A, Hill Street, Galle.')
+                print('011-2345678')
                 print('----------------------------------------------------------')
                 print('Brand\t\tModel\t\tPrice\t\tQuantity')
                 print('----------------------------------------------------------')
