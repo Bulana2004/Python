@@ -144,7 +144,7 @@ while True:
         output_student_details()
 
     if user_input == 3:
-        find_index_and_update_data()
+        print()
 
     if user_input == 4:
         break
