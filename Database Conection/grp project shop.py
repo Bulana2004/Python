@@ -37,8 +37,8 @@ def database_connection():
     global mycursor
     dbconnection = mysql.connector.connect(
         host="localhost",
-        user="pythonDatabase",
-        passwd="1234",
+        user="root",
+        passwd="",
         database="shop"
     )
     mycursor = dbconnection.cursor()
