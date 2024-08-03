@@ -93,10 +93,8 @@ class NIC:
                         date = None
 
                         # Female date change rewrite
-                        if date_in_year > 365:
-                            if is_leap_year:
-                                if date_in_year > 366:
-                                    date_in_year -= 500
+                        if date_in_year > 364:
+                            date_in_year -= 500
                         else:
                             date_in_year = date_in_year
 
