@@ -170,7 +170,7 @@ class NIC:
                     if len(nic) == 12:  # Example NIC number 200418501010
                         date_in_year = int(nic[4:7])
                         # Make femail date
-                        if date_in_year > 400:
+                        if date_in_year >= 500:
                             tk.messagebox.showinfo('Gender', 'Female')
                         else:
                             tk.messagebox.showinfo('Gender', 'Male')
