@@ -9,6 +9,9 @@ class NIC:
         self.main_window = tkinter.Tk()
         root = self.main_window
 
+        # Disaleb maximize button
+        root.resizable(False, False)
+
         # Window name
         root.title("Ckeck birthday and Gender using NIC")
 
@@ -84,67 +87,63 @@ class NIC:
                     # Check NIC number lenght is == 12
                     if len(nic) == 12:  # Example NIC number 200418501010
 
-                        # Asign the variables
+                        day_of_year = int(nic[4:7])
                         year = int(nic[:4])
-                        date_in_year = int(nic[4:7])
+
+                        # Leap year check
                         is_leap_year = (year % 4 == 0 and year %
                                         100 != 0) or (year % 400 == 0)
-                        month = None
-                        date = None
+                        day_of_year -= 1
 
-                        # Female date change rewrite
-                        if date_in_year > 364:
-                            date_in_year -= 500
-                        else:
-                            date_in_year = date_in_year
+                        if day_of_year >= 500:
+                            day_of_year -= 500
 
-                        # Calculate birthday
-                        if date_in_year <= 31:
+                        if day_of_year <= 31:
                             month = 'January'
-                            date = date_in_year
-                        elif date_in_year <= 60:
+                            day = day_of_year
+                        elif is_leap_year and day_of_year <= 60:
                             month = 'February'
-                            date = date_in_year - 31
-                            if is_leap_year:
-                                if date_in_year == 60:
-                                    month = 'February'
-                                    date = 29
+                            day = day_of_year - 31
+                        elif not is_leap_year and day_of_year <= 59:
+                            month = 'February'
+                            day = day_of_year - 31
+                        elif day_of_year <= 90:
+                            month = 'March'
+                            day = day_of_year - 59
+                        elif day_of_year <= 120:
+                            month = 'April'
+                            day = day_of_year - 90
+                        elif day_of_year <= 151:
+                            month = 'May'
+                            day = day_of_year - 120
+                        elif day_of_year <= 181:
+                            month = 'June'
+                            day = day_of_year - 151
+                        elif day_of_year <= 212:
+                            month = 'July'
+                            day = day_of_year - 181
+                        elif day_of_year <= 242:
+                            month = 'August'
+                            day = day_of_year - 212
+                        elif day_of_year <= 273:
+                            month = 'September'
+                            day = day_of_year - 242
+                        elif day_of_year <= 303:
+                            month = 'October'
+                            day = day_of_year - 273
+                        elif day_of_year <= 334:
+                            month = 'November'
+                            day = day_of_year - 303
+                        elif day_of_year <= 364:
+                            month = 'December'
+                            day = day_of_year - 334
                         else:
-                            if not is_leap_year:
-                                date_in_year -= 1
-                            if date_in_year <= 90:
-                                month = 'March'
-                                date = date_in_year - 60
-                            elif date_in_year <= 120:
-                                month = 'April'
-                                date = date_in_year - 91
-                            elif date_in_year <= 151:
-                                month = 'May'
-                                date = date_in_year - 121
-                            elif date_in_year <= 181:
-                                month = 'June'
-                                date = date_in_year - 152
-                            elif date_in_year <= 212:
-                                month = 'July'
-                                date = date_in_year - 182
-                            elif date_in_year <= 243:
-                                month = 'August'
-                                date = date_in_year - 213
-                            elif date_in_year <= 273:
-                                month = 'September'
-                                date = date_in_year - 244
-                            elif date_in_year <= 304:
-                                month = 'October'
-                                date = date_in_year - 274
-                            elif date_in_year <= 334:
-                                month = 'November'
-                                date = date_in_year - 305
-                            elif date_in_year <= 365:
-                                month = 'December'
-                                date = date_in_year - 335
+                            # Handle cases where day_of_year exceeds expected ranges
+                            month = 'Unknown'
+                            day = day_of_year
 
                         tk.messagebox.showinfo(
-                            'Birthday', f"{year} / {month} / {date}")
+                            'Birthday', f'{year} / {month} / {day}')
 
                     else:
                         tk.messagebox.showwarning(
