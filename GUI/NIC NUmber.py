@@ -122,25 +122,27 @@ class NIC:
                         elif day_of_year <= 212:
                             month = 'July'
                             day = day_of_year - 181
-                        elif day_of_year <= 242:
+                        elif day_of_year <= 243:
                             month = 'August'
                             day = day_of_year - 212
-                        elif day_of_year <= 273:
+                        elif day_of_year <= 274:
                             month = 'September'
-                            day = day_of_year - 242
-                        elif day_of_year <= 303:
+                            day = day_of_year - 243
+                        elif day_of_year <= 304:
                             month = 'October'
-                            day = day_of_year - 273
-                        elif day_of_year <= 334:
+                            day = day_of_year - 274
+                        elif day_of_year <= 335:
                             month = 'November'
-                            day = day_of_year - 303
-                        elif day_of_year <= 364:
+                            day = day_of_year - 304
+                        elif day_of_year <= 365:
+                            if is_leap_year:
+                                day_of_year += 1
                             month = 'December'
-                            day = day_of_year - 334
+                            day = day_of_year - 335
                         else:
                             # Handle cases where day_of_year exceeds expected ranges
                             month = 'Unknown'
-                            day = day_of_year
+                            day = 'Unknown'
 
                         tk.messagebox.showinfo(
                             'Birthday', f'{year} / {month} / {day}')
