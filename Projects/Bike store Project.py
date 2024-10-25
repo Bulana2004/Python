@@ -1,6 +1,6 @@
 bikes = []
 item_number = 1
-print('\nDavid Peris Motor Enterprise')
+print('\nMadhumala Motor Enterprise')
 print('No:356/A, Hill Street, Galle.')
 print('011-2345678')
 
@@ -119,7 +119,7 @@ while True:
                     buy_quantity
 
                 # Bill Output
-                print('\nDavid Peris Motor Enterprise')
+                print('\nMadhumala Motor Enterprise')
                 print('No:356/A, Hill Street, Galle.')
                 print('011-2345678')
                 print('----------------------------------------------------------')
